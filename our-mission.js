@@ -1232,7 +1232,11 @@
 }`;
 
   function ensureStyles() {
-    if (document.getElementById(STYLE_ID)) return;
+    var existingStyle = document.getElementById(STYLE_ID);
+    if (existingStyle) {
+      if (existingStyle.textContent !== styles) existingStyle.textContent = styles;
+      return;
+    }
 
     var style = document.createElement("style");
     style.id = STYLE_ID;
@@ -1264,10 +1268,22 @@
     return mount.querySelector(ROOT_SELECTOR);
   }
 
+  function reconcileLegacyMarkup(root) {
+    root.querySelectorAll("header.site-header, footer").forEach(function (element) {
+      element.remove();
+    });
+
+    var contactButton = root.querySelector(".closing-actions .button-ghost");
+    if (contactButton && contactButton.textContent.trim() === "Contact") {
+      contactButton.setAttribute("href", "https://settlepal.webflow.io/contact-us");
+    }
+  }
+
   function initialize() {
     ensureStyles();
     var root = ensureMarkup();
     if (!root) return;
+    reconcileLegacyMarkup(root);
 
     (function () {
       "use strict";
