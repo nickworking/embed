@@ -64,6 +64,11 @@
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Listings Calendar</div>
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 3h5v5M14 10l7-7M8 11H3v10h10v-5"/></svg>Copy trading</div>
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 15l3-4 3 2 4-6"/></svg>Leaderboard</div>
+            <span class="sp-nav-label">Account</span>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>Profile</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18l2-2 2 2M18 16v6M12 18H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v6"/><path d="M11 11h-1V8h1M11 14h.01"/></svg>AI assistants &amp; API</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>API Keys</div>
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="7" rx="1.5"/><rect x="4" y="13" width="16" height="7" rx="1.5"/><path d="M8 7.5h.01M8 16.5h.01"/></svg>Server</div>
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>Billing</div>
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 3h5v5M14 10l7-7M8 11H3v10h10v-5"/></svg>Referrals</div>
@@ -111,6 +116,28 @@
                   <span class="sp-card-pnl">+$129.41</span>
                   <span style="color:var(--sp-text-muted);cursor:pointer">⋮</span>
                 </div>
+                <table class="sp-dash-table">
+                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">◇ Binance</td><td class="sp-td-head">◆ Bybit</td></tr>
+                  <tr><td class="sp-td-label">Ask</td><td class="sp-td-val">0.0004631</td><td class="sp-td-val">0.0004647</td></tr>
+                  <tr><td class="sp-td-label">Bid</td><td class="sp-td-val">0.0004629</td><td class="sp-td-val">0.0004646</td></tr>
+                  <tr><td class="sp-td-label">Bid/Ask</td><td class="sp-td-val">0.043%</td><td class="sp-td-val">0.022%</td></tr>
+                  <tr><td class="sp-td-label">Funding</td><td class="sp-td-val" style="color:var(--sp-loss)">-0.4291%</td><td class="sp-td-val" style="color:var(--sp-loss)">-0.1641%</td></tr>
+                  <tr><td class="sp-td-label">Volume 24h</td><td class="sp-td-val">$57.0M</td><td class="sp-td-val">$16.5M</td></tr>
+                </table>
+                <div class="sp-dash-spread-row">
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Upper (Open)</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.38<small>%</small></div><div class="sp-spread-sub" style="color:var(--sp-profit)">Long A +0.324%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Δ</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.18<small>%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">-0.065%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Lower (Close)</div><div class="sp-spread-val" style="color:var(--sp-loss)">-0.2<small>%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">Short A -0.389%</div></div>
+                </div>
+                <table class="sp-dash-table" style="margin-top:6px;border-top:1px solid var(--sp-line);padding-top:6px">
+                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">Binance</td><td class="sp-td-head">Bybit</td></tr>
+                  <tr><td class="sp-td-label">Position</td><td class="sp-td-val" style="color:var(--sp-profit)">+5,404,236</td><td class="sp-td-val" style="color:var(--sp-loss)">-5,404,236</td></tr>
+                  <tr><td class="sp-td-label">Entry</td><td class="sp-td-val">0.0004626</td><td class="sp-td-val">0.0004644</td></tr>
+                  <tr><td class="sp-td-label"></td><td colspan="2" style="text-align:center;font-family:var(--sp-mono);font-size:11px;color:var(--sp-text-secondary)">0.39%</td></tr>
+                  <tr><td class="sp-td-label">uPnL</td><td class="sp-td-val" style="color:var(--sp-profit)">+$2.16</td><td class="sp-td-val" style="color:var(--sp-loss)">-$1.35</td></tr>
+                  <tr><td class="sp-td-label">Balance</td><td class="sp-td-val">$8,445.99</td><td class="sp-td-val">$6,139.82</td></tr>
+                  <tr><td class="sp-td-label">Total uPnL</td><td colspan="2" class="sp-td-val" style="color:var(--sp-profit);text-align:center">+$0.81</td></tr>
+                </table>
                 <div class="sp-card-stats-bar">
                   <span>Size <b>$2,500</b></span><span>5,404,236</span><span>Ord <b>1</b></span><span style="color:var(--sp-profit)">Long</span><span>Liq <b>3%</b></span><span>Lev <b>3×</b></span><span>Delay <b>1000</b><small>ms</small>/<b>1000</b><small>ms</small>/<b>0</b><small>ms</small></span>
                   <span style="margin-left:auto;color:var(--sp-text-primary)">Open <small>▽</small></span>
@@ -146,6 +173,27 @@
                   <span class="sp-card-pnl">+$41.30</span>
                   <span style="color:var(--sp-text-muted);cursor:pointer">⋮</span>
                 </div>
+                <table class="sp-dash-table">
+                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">◇ Binance</td><td class="sp-td-head">◆ Hyperliquid</td></tr>
+                  <tr><td class="sp-td-label">Ask</td><td class="sp-td-val">0.85840</td><td class="sp-td-val">0.86004</td></tr>
+                  <tr><td class="sp-td-label">Bid</td><td class="sp-td-val">0.85830</td><td class="sp-td-val">0.85988</td></tr>
+                  <tr><td class="sp-td-label">Bid/Ask</td><td class="sp-td-val">0.012%</td><td class="sp-td-val">0.019%</td></tr>
+                  <tr><td class="sp-td-label">Funding</td><td class="sp-td-val" style="color:var(--sp-profit)">+0.0050%</td><td class="sp-td-val" style="color:var(--sp-profit)">+0.0013%</td></tr>
+                  <tr><td class="sp-td-label">Volume 24h</td><td class="sp-td-val">$29.5M</td><td class="sp-td-val">$4.4M</td></tr>
+                </table>
+                <div class="sp-dash-spread-row">
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Upper (Open)</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.25<small>%</small></div><div class="sp-spread-sub" style="color:var(--sp-profit)">Long A +0.172%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Δ</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.2<small>%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">-0.030%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Lower (Close)</div><div class="sp-spread-val" style="color:var(--sp-loss)">-0.05<small>%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">Short A -0.203%</div></div>
+                </div>
+                <table class="sp-dash-table" style="margin-top:6px;border-top:1px solid var(--sp-line);padding-top:6px">
+                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">Binance</td><td class="sp-td-head">Hyperliquid</td></tr>
+                  <tr><td class="sp-td-label">Position</td><td class="sp-td-val">—</td><td class="sp-td-val">—</td></tr>
+                  <tr><td class="sp-td-label">Entry</td><td class="sp-td-val">—</td><td class="sp-td-val">—</td></tr>
+                  <tr><td class="sp-td-label">uPnL</td><td class="sp-td-val" style="color:var(--sp-profit)">+$0.00</td><td class="sp-td-val" style="color:var(--sp-profit)">+$0.00</td></tr>
+                  <tr><td class="sp-td-label">Balance</td><td class="sp-td-val">$8,445.99</td><td class="sp-td-val">$7,570.19</td></tr>
+                  <tr><td class="sp-td-label">Total uPnL</td><td colspan="2" class="sp-td-val" style="color:var(--sp-profit);text-align:center">+$0.00</td></tr>
+                </table>
                 <div class="sp-card-stats-bar">
                   <span>Size <b>$2,500</b></span><span>2,912</span><span>Ord <b>1</b></span><span style="color:var(--sp-profit)">Long</span><span>Liq <b>3%</b></span><span>Lev <b>3×</b></span><span>Delay <b>1000</b><small>ms</small>/<b>1000</b><small>ms</small>/<b>0</b><small>ms</small></span>
                   <span style="margin-left:auto;color:var(--sp-text-primary)">Open <small>▽</small></span>
@@ -160,7 +208,7 @@
                     <polyline points="0,50 20,48 40,45 60,50 80,55 100,52 120,48 140,45 160,50 180,55 200,52 220,48 240,42 260,45 280,50 300,48 320,45 340,50 360,52 380,48 400,45" fill="none" stroke="#10cf90" stroke-width="1.5"/>
                     <polyline points="0,70 20,72 40,75 60,70 80,65 100,68 120,72 140,75 160,70 180,65 200,68 220,72 240,78 260,75 280,70 300,72 320,75 340,70 360,68 380,72 400,75" fill="none" stroke="#e05252" stroke-width="1.5"/>
                     <text x="340" y="23" font-size="8" fill="#10cf90" font-family="Space Mono,monospace">0.250%</text>
-                    <text x="340" y="103" font-size="8" fill="#e05252" font-family="Space Mono,monospace">0.160%</text>
+                    <text x="340" y="103" font-size="8" fill="#e05252" font-family="Space Mono,monospace">0.203%</text>
                   </svg>
                   <div class="sp-chart-y"><span>0.050%</span></div>
                   <div class="sp-chart-x"><span>18:53:10</span><span>18:53:25</span><span>18:53:40</span><span>18:53:55</span></div>
@@ -709,6 +757,11 @@
     .sp-dash-table .sp-td-label { color: var(--sp-text-muted); width: 70px; }
     .sp-dash-table .sp-td-val { font-family: var(--sp-mono); font-size: 11px; }
     .sp-dash-table .sp-td-head { font-size: 10px; color: var(--sp-text-muted); font-weight: 500; text-align: center; padding-bottom: 4px; }
+
+    .sp-dash-spread-row { display: flex; justify-content: space-around; margin: 0.75rem 0; gap: 0.5rem; text-align: center; }
+    .sp-dash-spread-item .sp-spread-label { font-size: 9px; color: var(--sp-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .sp-dash-spread-item .sp-spread-val { font-family: var(--sp-mono); font-size: 16px; font-weight: 700; }
+    .sp-dash-spread-item .sp-spread-sub { font-size: 9px; color: var(--sp-text-muted); font-family: var(--sp-mono); }
 
     .sp-card-stats-bar {
       display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
