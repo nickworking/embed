@@ -1110,7 +1110,111 @@
     }
   }
 
+  function initTapeAnimation() {
+    var W = 300, H = 100;
+    function pct(v) { return (v >= 0 ? '+' : '') + v.toFixed(3) + '%'; }
+    function usd(v) { return (v < 0 ? '-$' : '+$') + Math.abs(v).toFixed(2); }
+    function cents(v) { return Math.round(v * 100) / 100; }
+    function sign(el, v) { el.classList.toggle('text-profit', v >= 0); el.classList.toggle('text-loss', v < 0); }
+    function money(el, v) { el.dataset.numV = v; el.textContent = usd(v); sign(el, v); }
+
+    function curve(p) {
+      var d = '';
+      for (var k = 1; k < p.length; k++) {
+        var xm = ((p[k - 1][0] + p[k][0]) / 2).toFixed(1);
+        d += 'C' + xm + ' ' + p[k - 1][1] + ' ' + xm + ' ' + p[k][1] + ' ' + p[k][0].toFixed(1) + ' ' + p[k][1];
+      }
+      return d;
+    }
+
+    function card(el, root) {
+      var cols = el.dataset.tape.split('|'), dec = +cols[0], k = Math.pow(10, dec);
+      var bidA = cols[1].split(',').map(Number), askA = cols[2].split(',').map(Number);
+      var bidB = cols[3].split(',').map(Number), askB = cols[4].split(',').map(Number);
+      var n = +el.dataset.window, lo = +el.dataset.lo, hi = +el.dataset.hi, start = +el.dataset.start;
+      var qty = +el.dataset.qty, ea = +el.dataset.ea, eb = +el.dataset.eb, step = W / n, end = +el.dataset.end, i = end;
+      var t = {};
+      el.querySelectorAll('[data-t]').forEach(function (x) { t[x.dataset.t] = x; });
+      var clocks = el.querySelectorAll('[data-clock]');
+      var realized = +el.dataset.realized, key = 'tape:' + el.dataset.card + ':';
+      var upnl = el.querySelector('[data-num-key="' + key + 'upnl"]'), badge = el.querySelector('[data-num-key="' + key + 'session"]');
+      var side = root.querySelector('[data-pnl="' + el.dataset.card + '"]');
+
+      function longA(j) { return (bidB[j] - askA[j]) / askA[j] * 100; }
+      function shortA(j) { return (bidA[j] - askB[j]) / askA[j] * 100; }
+      function y(v) { return +(H - (v - lo) / (hi - lo) * H).toFixed(1); }
+      function series(f) {
+        var p = [];
+        for (var j = i - n - 1; j <= i; j++) p.push([(j - i + n) * step, y(f(j))]);
+        return p;
+      }
+
+      function draw() {
+        t.askA.textContent = (askA[i] / k).toFixed(dec); t.askB.textContent = (askB[i] / k).toFixed(dec);
+        t.bidA.textContent = (bidA[i] / k).toFixed(dec); t.bidB.textContent = (bidB[i] / k).toFixed(dec);
+        t.baA.textContent = ((askA[i] - bidA[i]) / bidA[i] * 100).toFixed(3) + '%';
+        t.baB.textContent = ((askB[i] - bidB[i]) / bidB[i] * 100).toFixed(3) + '%';
+        var l = longA(i), s = shortA(i);
+        [[t.long, l], [t.short, s], [t.delta, l + s]].forEach(function (c) {
+          c[0].dataset.numV = c[1]; c[0].textContent = pct(c[1]); sign(c[0], c[1]);
+        });
+
+        var g = series(longA), r = series(function (j) { return -shortA(j); });
+        var dg = 'M' + g[0][0].toFixed(1) + ' ' + g[0][1] + curve(g), dr = 'M' + r[0][0].toFixed(1) + ' ' + r[0][1] + curve(r);
+        t.green.setAttribute('d', dg); t.greenGlow.setAttribute('d', dg);
+        t.red.setAttribute('d', dr); t.redGlow.setAttribute('d', dr);
+        t.band.setAttribute('d', dg + 'L' + W + ' ' + r[n + 1][1] + curve(r.reverse()) + 'Z');
+        if (t.mark) {
+          var x = (+t.mark.dataset.entry - i + n) / n * 100;
+          t.mark.style.transition = i === end ? 'none' : '';
+          t.mark.style.left = x + '%';
+          t.mark.style.visibility = x < 0 ? 'hidden' : '';
+        }
+        t.scroll.style.transition = 'none';
+        t.scroll.style.transform = 'translateX(' + step + 'px)';
+        void t.scroll.getBoundingClientRect();
+        t.scroll.style.transition = 'transform 1s linear';
+        t.scroll.style.transform = 'translateX(0px)';
+        [[t.headG, t.tagG, l], [t.headR, t.tagR, -s]].forEach(function (h) {
+          h[0].style.top = h[1].style.top = y(h[2]) + '%';
+          h[1].textContent = h[2].toFixed(3) + '%';
+        });
+        clocks.forEach(function (c) {
+          c.textContent = new Date((start + i - +c.dataset.clock) * 1000).toISOString().slice(11, 19);
+        });
+
+        if (!qty) return realized;
+        var ua = cents(qty * ((bidA[i] + askA[i]) / 2 / k - ea)), ub = cents(qty * (eb - (bidB[i] + askB[i]) / 2 / k));
+        var session = cents(realized + ua + ub);
+        [[t.uA, ua], [t.uB, ub]].forEach(function (c) { c[0].textContent = usd(c[1]); sign(c[0], c[1]); });
+        money(upnl, cents(ua + ub)); money(badge, session);
+        if (side) { side.textContent = usd(session); sign(side, session); }
+        return session;
+      }
+
+      return function () { i = i + 1 < bidA.length ? i + 1 : end; return draw(); };
+    }
+
+    var root = document.querySelector('#sp-arb-suite [data-tape-root]');
+    if (!root || root.dataset.tapeOn || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+    root.dataset.tapeOn = '1';
+    var steps = [].map.call(root.querySelectorAll('[data-tape]'), function (el) { return card(el, root); });
+    var today = root.querySelector('[data-num-key="tape:today"]');
+    var seen = false, tapeIO = new IntersectionObserver(function (e) { seen = e[0].isIntersecting; });
+    tapeIO.observe(root);
+    setInterval(function () {
+      if (!root.isConnected) { tapeIO.disconnect(); return; }
+      if (seen && !document.hidden) {
+        var total = cents(steps.reduce(function (sum, s) { return sum + s(); }, 0));
+        if (today) money(today, total);
+      }
+    }, 1000);
+  }
+
   ensureStyles();
   var root = ensureMarkup();
-  if (root) initLiveData();
+  if (root) {
+    initLiveData();
+    initTapeAnimation();
+  }
 })();
