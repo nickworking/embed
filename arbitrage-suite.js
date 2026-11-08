@@ -3,7 +3,7 @@
  * Source: /Users/toad/Documents/webflow/home/arbitrage-suite.rtf
  *
  * Usage:
- * <script defer src="https://raw.githack.com/nickworking/embed/main/arbitrage-suite.js"></script>
+ * <script defer src="https://cdn.jsdelivr.net/gh/nickworking/embed@main/arbitrage-suite.js"></script>
  */
 (function () {
   "use strict";
