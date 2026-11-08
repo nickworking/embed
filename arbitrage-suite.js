@@ -305,8 +305,10 @@
 
   <!-- ════════ SCANNER PREVIEW (LIVE DATA) ════════ -->
   <section class="sp-scanner-section">
-    <h2>Scan<br>every exchange pair</h2>
-    <p>The scanner will compare cross-exchange spreads on perpetual futures at your order size, with recent backtests and taker fees on both legs already reflected.</p>
+    <div class="sp-section-heading-grid">
+      <h2>Scan<br>every exchange pair</h2>
+      <p>The scanner will compare cross-exchange spreads on perpetual futures at your order size, with recent backtests and taker fees on both legs already reflected.</p>
+    </div>
 
     <div class="sp-scanner-window">
       <div class="sp-scanner-toolbar">
@@ -360,8 +362,10 @@
 
   <!-- ════════ TWO-LEG EXECUTION ════════ -->
   <section class="sp-twoleg-section">
-    <h2>Trade<br>both legs at once</h2>
-    <p>SettlePal will go long where the coin is cheap and short where it is expensive, sending both orders together from your server.</p>
+    <div class="sp-section-heading-grid">
+      <h2>Trade<br>both legs at once</h2>
+      <p>SettlePal will go long where the coin is cheap and short where it is expensive, sending both orders together from your server. You will be able to set the opening and closing spreads, or let Auto Mode follow the pair's history.</p>
+    </div>
 
     <div class="sp-twoleg-layout">
       <div class="sp-strategy-form" aria-hidden="true">
@@ -395,8 +399,10 @@
 
   <!-- ════════ TELEGRAM / SERVER ════════ -->
   <section class="sp-watch-section">
-    <h2>Watch<br>from anywhere</h2>
-    <p>Every open, close, and funding payment will reach Telegram as it happens. Trade-only keys will never request withdrawal access and can be locked to your server's IP.</p>
+    <div class="sp-section-heading-grid">
+      <h2>Watch<br>from anywhere</h2>
+      <p>Every open, close, and funding payment will reach Telegram as it happens. Trade-only keys will never request withdrawal access and can be locked to your server's IP.</p>
+    </div>
 
     <div class="sp-watch-layout">
       <div class="sp-phone-frame" aria-hidden="true">
@@ -766,7 +772,6 @@
     /* ── SCANNER SECTION ── */
     .sp-scanner-section { max-width: 72rem; margin: 0 auto; padding: 5rem 1.5rem 0; }
     .sp-scanner-section h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance; }
-    .sp-scanner-section > p { font-size: 17px; line-height: 1.6; color: var(--sp-text-secondary); margin-top: 12px; max-width: 42rem; text-wrap: pretty; }
 
     .sp-scanner-window {
       margin-top: 2rem; border-radius: 12px; background: var(--sp-win);
@@ -822,7 +827,6 @@
     /* ── TWO-LEG SECTION ── */
     .sp-twoleg-section { max-width: 72rem; margin: 0 auto; padding: 5rem 1.5rem 0; }
     .sp-twoleg-section h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance; }
-    .sp-twoleg-section > p { font-size: 15px; line-height: 1.7; color: var(--sp-text-secondary); margin-top: 12px; max-width: 42rem; }
 
     .sp-twoleg-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
 
@@ -865,7 +869,6 @@
     /* ── TELEGRAM / SERVER SECTION ── */
     .sp-watch-section { max-width: 72rem; margin: 0 auto; padding: 5rem 1.5rem 0; }
     .sp-watch-section h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance; }
-    .sp-watch-section > p { font-size: 15px; line-height: 1.7; color: var(--sp-text-secondary); margin-top: 12px; max-width: 42rem; }
 
     .sp-watch-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
 
