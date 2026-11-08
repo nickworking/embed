@@ -3,17 +3,16 @@
  * Source: /Users/toad/Documents/webflow/home/arbitrage-suite.rtf
  *
  * Usage:
- * <script defer src="https://cdn.jsdelivr.net/gh/nickworking/embed@VERSION/arbitrage-suite.js"></script>
+ * <script defer src="https://raw.githack.com/nickworking/embed/main/arbitrage-suite.js"></script>
  */
 (function () {
   "use strict";
 
   var loaderScript = document.currentScript;
   var STYLE_ID = "sp-arb-suite-embed-styles";
-  var ROOT_SELECTOR = "#sp-arb-suite";
+  var ROOT_ID = "sp-arb-suite";
 
-  var markup = `<div id="sp-arb-suite" aria-label="SettlePal Arbitrage Suite — Coming Soon">
-<!-- ════════ HERO ════════ -->
+  var markup = `<!-- ════════ HERO ════════ -->
   <section class="sp-hero">
     <div class="sp-hero-inner">
       <div class="sp-coming-soon"><span class="sp-pulse"></span>Coming Soon <i style="opacity:0.4">·</i> Exclusively for Platinum Members <i style="opacity:0.4">·</i> 2027</div>
@@ -51,68 +50,115 @@
         <svg class="sp-stage-glow" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,124 50,129 101,229 151,207 202,252 252,280 303,257 353,237 403,216 454,139 504,105 555,98 605,92 656,102 706,115 756,115 807,190 857,193 908,207 958,198 1008,247 1059,224 1109,194 1160,175 1200,123 1200,177 1160,222 1109,242 1059,279 1008,308 958,261 908,259 857,241 807,227 756,164 706,154 656,149 605,149 555,156 504,174 454,199 403,269 353,291 303,310 252,330 202,297 151,256 101,282 50,187 0,177" fill="#10cf90"/></svg>
         <div class="sp-dash-window" aria-hidden="true">
           <div class="sp-dash-sidebar">
-            <svg class="sp-dash-logo" viewBox="0 0 280 50" fill="none"><text x="0" y="36" font-family="Space Grotesk, sans-serif" font-size="32" font-weight="600" fill="#ededef">SettlePal</text></svg>
-            <span class="sp-nav-label">Overview</span>
-            <div class="sp-trade-row"><span class="sp-trade-dot"></span><span class="sp-trade-pair">MEW</span><span class="sp-trade-exch">Binance/Bybit</span><span class="sp-trade-pnl">+$129.14</span></div>
-            <div class="sp-trade-row"><span class="sp-trade-dot"></span><span class="sp-trade-pair">AERO</span><span class="sp-trade-exch">Binance/Hyperliquid</span><span class="sp-trade-pnl">+$41.30</span></div>
+            <span style="display:flex;align-items:center;padding:0 0.5rem 0.875rem;gap:6px"><svg viewBox="0 0 20 20" width="20" height="20"><circle cx="10" cy="10" r="9" fill="#10cf90"/><text x="10" y="14" text-anchor="middle" font-size="11" font-weight="700" fill="#001e17" font-family="Space Grotesk,sans-serif">S</text></svg><span style="font-size:14px;font-weight:600;color:var(--sp-text-primary)">SettlePal</span></span>
+            <span class="sp-nav-label">Overview <span style="float:right;display:inline-flex;gap:1px;border-radius:6px;border:1px solid var(--sp-line);padding:1px;font-size:10px"><span style="background:var(--sp-surface-700);border-radius:4px;padding:1px 6px;color:var(--sp-text-primary)">Session</span><span style="padding:1px 6px">Today</span></span></span>
+            <div class="sp-trade-row"><span class="sp-trade-dot"></span><span class="sp-trade-pair">MEW</span><span class="sp-trade-exch">Binance...</span><span class="sp-trade-pnl">+$129.68</span></div>
+            <div class="sp-trade-row"><span class="sp-trade-dot"></span><span class="sp-trade-pair">AERO</span><span class="sp-trade-exch">Binance...</span><span class="sp-trade-pnl">+$41.30</span></div>
             <span class="sp-nav-label">Trading</span>
             <div class="sp-nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 8L12 3l10 5"/><path d="M20 11v8a2 2 0 01-2 2H6a2 2 0 01-2-2v-8"/></svg>Dashboard</div>
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 20V4M17 4l3 3M17 4l-3 3M7 4v16M7 20l3-3M7 20l-3-3"/></svg>Spread Scanner</div>
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M16 8L8 16"/></svg>Funding Scanner</div>
             <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 10V3L5 14h6v7l8-11h-6z"/></svg>Signals</div>
-            <div class="sp-server-status"><span class="sp-server-dot"></span>Server · Tokyo · online</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Portfolio</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>History</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Listings Calendar</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 3h5v5M14 10l7-7M8 11H3v10h10v-5"/></svg>Copy trading</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 15l3-4 3 2 4-6"/></svg>Leaderboard</div>
+            <span class="sp-nav-label">Account</span>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>Profile</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>Settings</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a4 4 0 014 4c0 1.1-.45 2.1-1.17 2.83L12 12M12 2a4 4 0 00-4 4c0 1.1.45 2.1 1.17 2.83L12 12M12 12v10"/><path d="M4 15h16"/></svg>AI assistants &amp; API</div>
+            <div class="sp-nav-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>API Keys</div>
           </div>
           <div class="sp-dash-main">
             <div class="sp-dash-topbar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 21H19a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-              Dashboard
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:16px;height:16px"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+              <span style="flex:1;display:flex;align-items:center;gap:8px">
+                <span style="flex:1;display:flex;align-items:center;gap:6px;background:var(--sp-surface-700);border-radius:6px;padding:5px 10px;font-size:11px;color:var(--sp-text-muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:13px;height:13px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Search <span style="margin-left:auto;opacity:0.5;font-family:var(--sp-mono);font-size:10px">/ </span></span>
+              </span>
+              <span style="display:flex;align-items:center;gap:10px;color:var(--sp-text-muted)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:15px;height:15px"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/><circle cx="18" cy="4" r="3" fill="#10cf90" stroke="none"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:15px;height:15px"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4"/></svg>
+                <span style="width:24px;height:24px;border-radius:50%;background:var(--sp-surface-700);display:grid;place-items:center;font-size:10px;font-weight:600;color:var(--sp-text-primary)">A</span>
+              </span>
+            </div>
+            <div style="font-size:18px;font-weight:500;padding:12px 0 8px">Dashboard</div>
+            <div style="display:flex;gap:8px;padding-bottom:10px;border-bottom:1px solid var(--sp-line);font-size:11px">
+              <span style="border:1px solid var(--sp-line);border-radius:6px;padding:4px 10px;color:var(--sp-text-secondary)">Total Balance <span style="font-family:var(--sp-mono);font-weight:600;color:var(--sp-text-primary)">$22,156.00</span></span>
+              <span style="border:1px solid var(--sp-line);border-radius:6px;padding:4px 10px;color:var(--sp-text-secondary)">Today's PnL <span style="font-family:var(--sp-mono);font-weight:600;color:var(--sp-profit)">+$170.98</span></span>
+              <span style="border:1px solid var(--sp-line);border-radius:6px;padding:4px 10px;color:var(--sp-text-secondary)">Active Cards <span style="font-family:var(--sp-mono);font-weight:600;color:var(--sp-text-primary)">2</span> <span style="color:var(--sp-text-muted)">1 pos</span></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 0;font-size:12px">
+              <span style="font-weight:500;color:var(--sp-text-primary)">Active <span style="font-family:var(--sp-mono);color:var(--sp-text-muted)">2</span></span>
+              <span style="color:var(--sp-text-muted)">Closed <span style="font-family:var(--sp-mono)">194</span></span>
+              <span style="color:var(--sp-text-muted)">■ Stop All</span>
+              <span style="flex:1"></span>
+              <span style="display:flex;align-items:center;gap:4px;background:var(--sp-surface-700);border-radius:6px;padding:4px 8px;font-size:10px;color:var(--sp-text-muted)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:12px;height:12px"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>Search cards...</span>
+              <span style="font-size:10px;color:var(--sp-text-muted)">↕ Sort</span>
+              <span style="display:flex;gap:2px"><span style="width:16px;height:16px;border-radius:3px;background:var(--sp-surface-700);display:grid;place-items:center"><svg viewBox="0 0 16 16" style="width:10px;height:10px" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="5" height="5"/><rect x="9" y="2" width="5" height="5"/><rect x="2" y="9" width="5" height="5"/><rect x="9" y="9" width="5" height="5"/></svg></span><span style="width:16px;height:16px;border-radius:3px;display:grid;place-items:center"><svg viewBox="0 0 16 16" style="width:10px;height:10px" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4h12M2 8h12M2 12h12"/></svg></span></span>
+              <span style="background:var(--sp-accent);color:#001e17;font-size:10px;font-weight:600;padding:4px 10px;border-radius:6px">+ New Card</span>
             </div>
             <div class="sp-dash-cards">
               <div class="sp-dash-card">
                 <div class="sp-dash-card-header">
                   <div class="sp-pair-name"><span class="sp-pair-dot"></span><span class="sp-pair-label">MEW</span></div>
                   <span class="sp-running">Running</span>
-                  <span class="sp-card-pnl">+$129.14</span>
+                  <span class="sp-card-pnl">+$129.68</span>
+                  <span style="color:var(--sp-text-muted);cursor:pointer">⋮</span>
                 </div>
                 <table class="sp-dash-table">
-                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">Binance</td><td class="sp-td-head">Bybit</td></tr>
-                  <tr><td class="sp-td-label">Ask</td><td class="sp-td-val">0.0004628</td><td class="sp-td-val">0.0004645</td></tr>
-                  <tr><td class="sp-td-label">Bid</td><td class="sp-td-val">0.0004627</td><td class="sp-td-val">0.0004644</td></tr>
+                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">◇ Binance</td><td class="sp-td-head">◆ Bybit</td></tr>
+                  <tr><td class="sp-td-label">Ask</td><td class="sp-td-val">0.0004632</td><td class="sp-td-val">0.0004647</td></tr>
+                  <tr><td class="sp-td-label">Bid</td><td class="sp-td-val">0.0004629</td><td class="sp-td-val">0.0004646</td></tr>
+                  <tr><td class="sp-td-label">Bid/Ask</td><td class="sp-td-val">0.065%</td><td class="sp-td-val">0.022%</td></tr>
                   <tr><td class="sp-td-label">Funding</td><td class="sp-td-val" style="color:var(--sp-loss)">-0.4291%</td><td class="sp-td-val" style="color:var(--sp-loss)">-0.1641%</td></tr>
+                  <tr><td class="sp-td-label">Volume 24h</td><td class="sp-td-val">$57.0M</td><td class="sp-td-val">$16.5M</td></tr>
                 </table>
                 <div class="sp-dash-spread-row">
-                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Upper (Open)</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.38<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-profit)">Long A +0.346%</div></div>
-                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Δ</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.18<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">-0.043%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Upper (Open)</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.38<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-profit)">Long A +0.302%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Δ</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.18<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">-0.086%</div></div>
                   <div class="sp-dash-spread-item"><div class="sp-spread-label">Lower (Close)</div><div class="sp-spread-val" style="color:var(--sp-loss)">-0.2<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">Short A -0.389%</div></div>
                 </div>
+                <table class="sp-dash-table" style="margin-top:6px;border-top:1px solid var(--sp-line);padding-top:6px">
+                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">Binance</td><td class="sp-td-head">Bybit</td></tr>
+                  <tr><td class="sp-td-label">Position</td><td class="sp-td-val" style="color:var(--sp-profit)">+5,404,236</td><td class="sp-td-val" style="color:var(--sp-loss)">-5,404,236</td></tr>
+                  <tr><td class="sp-td-label">Entry</td><td class="sp-td-val">0.0004626</td><td class="sp-td-val">0.0004644</td></tr>
+                  <tr><td class="sp-td-label"></td><td colspan="2" style="text-align:center;font-family:var(--sp-mono);font-size:11px;color:var(--sp-text-secondary)">0.39%</td></tr>
+                  <tr><td class="sp-td-label">uPnL</td><td class="sp-td-val" style="color:var(--sp-profit)">+$2.43</td><td class="sp-td-val" style="color:var(--sp-loss)">-$1.35</td></tr>
+                  <tr><td class="sp-td-label">Balance</td><td class="sp-td-val">$8,445.99</td><td class="sp-td-val">$6,139.82</td></tr>
+                  <tr><td class="sp-td-label">Total uPnL</td><td colspan="2" class="sp-td-val" style="color:var(--sp-profit);text-align:center">+$1.08</td></tr>
+                </table>
               </div>
               <div class="sp-dash-card">
                 <div class="sp-dash-card-header">
                   <div class="sp-pair-name"><span class="sp-pair-dot"></span><span class="sp-pair-label">AERO</span></div>
                   <span class="sp-running">Running</span>
                   <span class="sp-card-pnl">+$41.30</span>
+                  <span style="color:var(--sp-text-muted);cursor:pointer">⋮</span>
                 </div>
                 <table class="sp-dash-table">
-                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">Binance</td><td class="sp-td-head">Hyperliquid</td></tr>
-                  <tr><td class="sp-td-label">Ask</td><td class="sp-td-val">0.85920</td><td class="sp-td-val">0.86078</td></tr>
-                  <tr><td class="sp-td-label">Bid</td><td class="sp-td-val">0.85910</td><td class="sp-td-val">0.86049</td></tr>
+                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">◇ Binance</td><td class="sp-td-head">◆ Hyperliquid</td></tr>
+                  <tr><td class="sp-td-label">Ask</td><td class="sp-td-val">0.85880</td><td class="sp-td-val">0.86040</td></tr>
+                  <tr><td class="sp-td-label">Bid</td><td class="sp-td-val">0.85870</td><td class="sp-td-val">0.86017</td></tr>
+                  <tr><td class="sp-td-label">Bid/Ask</td><td class="sp-td-val">0.012%</td><td class="sp-td-val">0.027%</td></tr>
                   <tr><td class="sp-td-label">Funding</td><td class="sp-td-val" style="color:var(--sp-profit)">+0.0050%</td><td class="sp-td-val" style="color:var(--sp-profit)">+0.0013%</td></tr>
+                  <tr><td class="sp-td-label">Volume 24h</td><td class="sp-td-val">$29.5M</td><td class="sp-td-val">$4.4M</td></tr>
                 </table>
                 <div class="sp-dash-spread-row">
-                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Upper (Open)</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.25<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-profit)">Long A +0.150%</div></div>
-                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Δ</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.2<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">-0.045%</div></div>
-                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Lower (Close)</div><div class="sp-spread-val" style="color:var(--sp-loss)">-0.05<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">Short A -0.196%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Upper (Open)</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.25<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-profit)">Long A +0.160%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Δ</div><div class="sp-spread-val" style="color:var(--sp-profit)">0.2<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">-0.038%</div></div>
+                  <div class="sp-dash-spread-item"><div class="sp-spread-label">Lower (Close)</div><div class="sp-spread-val" style="color:var(--sp-loss)">-0.05<small style="font-size:11px">%</small></div><div class="sp-spread-sub" style="color:var(--sp-loss)">Short A -0.198%</div></div>
                 </div>
+                <table class="sp-dash-table" style="margin-top:6px;border-top:1px solid var(--sp-line);padding-top:6px">
+                  <tr><td class="sp-td-head" colspan="1"></td><td class="sp-td-head">Binance</td><td class="sp-td-head">Hyperliquid</td></tr>
+                  <tr><td class="sp-td-label">Position</td><td class="sp-td-val">—</td><td class="sp-td-val">—</td></tr>
+                  <tr><td class="sp-td-label">Entry</td><td class="sp-td-val">—</td><td class="sp-td-val">—</td></tr>
+                  <tr><td class="sp-td-label">uPnL</td><td class="sp-td-val" style="color:var(--sp-profit)">+$0.00</td><td class="sp-td-val" style="color:var(--sp-profit)">+$0.00</td></tr>
+                  <tr><td class="sp-td-label">Balance</td><td class="sp-td-val">$8,445.99</td><td class="sp-td-val">$7,570.19</td></tr>
+                  <tr><td class="sp-td-label">Total uPnL</td><td colspan="2" class="sp-td-val" style="color:var(--sp-profit);text-align:center">+$0.00</td></tr>
+                </table>
               </div>
             </div>
-          </div>
-          <div class="sp-tg-overlay">
-            <div class="sp-tg-header">
-              <div class="sp-tg-avatar">S</div>
-              <div><div class="sp-tg-name">SettlePal</div><div class="sp-tg-sub">Telegram alerts</div></div>
-            </div>
-            <div class="sp-tg-msg">Opened MEW. Long Binance 0.0004626, short Bybit 0.0004644. Spread 0.39%.</div>
-            <div class="sp-tg-time">18:53</div>
           </div>
         </div>
       </div>
@@ -353,14 +399,26 @@
     <p>Every open, close, and funding payment will reach Telegram as it happens. Trade-only keys will never request withdrawal access and can be locked to your server's IP.</p>
 
     <div class="sp-watch-layout">
-      <div class="sp-tg-phone" aria-hidden="true">
-        <div class="sp-tg-phone-header">
-          <div class="sp-tg-avatar">S</div>
-          <div><div class="sp-tg-phone-name">SettlePal</div><div class="sp-tg-phone-sub">bot</div></div>
+      <div class="sp-phone-frame" aria-hidden="true">
+        <div class="sp-phone-inner">
+          <div class="sp-tg-phone-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:16px;height:16px;color:var(--sp-text-muted)"><path d="M15 18l-6-6 6-6"/></svg>
+            <div class="sp-tg-avatar">S</div>
+            <div style="flex:1"><div class="sp-tg-phone-name">SettlePal</div><div class="sp-tg-phone-sub">bot · online</div></div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:16px;height:16px;color:var(--sp-text-muted)"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:6px;padding:8px 10px;overflow:hidden">
+            <div class="sp-tg-bubble"><span style="font-size:10px;color:var(--sp-text-muted);display:block;margin-bottom:3px">System</span>Server online. Tokyo, 203.0.113.24.<div class="sp-bubble-time">03:12</div></div>
+            <div class="sp-tg-bubble"><span style="font-size:10px;color:var(--sp-accent);display:block;margin-bottom:3px">↗ Open</span>Opened MEW-USDT. Long Binance 0.0005065, short Bybit 0.0005141. Spread 1.50%.<div class="sp-bubble-time">05:00</div></div>
+            <div class="sp-tg-bubble"><span style="font-size:10px;color:var(--sp-profit);display:block;margin-bottom:3px">↙ Close</span>Closed MEW-USDT at 0.84%. <span class="sp-bubble-profit">+$3.26</span> before fees, held 42 min.<div class="sp-bubble-time">05:42</div></div>
+            <div class="sp-tg-bubble"><span style="font-size:10px;color:var(--sp-accent);display:block;margin-bottom:3px">↗ Open</span>Opened AERO-USDT. Long Binance 0.8592, short Hyperliquid 0.8610. Spread 0.21%.<div class="sp-bubble-time">06:11</div></div>
+            <div class="sp-tg-bubble"><span style="font-size:10px;color:var(--sp-text-muted);display:block;margin-bottom:3px">💰 Funding</span>Collected funding MEW-USDT: <span class="sp-bubble-profit">+$1.84</span>. Net rate: +0.265%.<div class="sp-bubble-time">08:00</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-top:1px solid var(--sp-line)">
+            <span style="flex:1;background:var(--sp-surface-700);border-radius:16px;padding:6px 12px;font-size:11px;color:var(--sp-text-muted)">Message</span>
+            <svg viewBox="0 0 24 24" fill="#10cf90" style="width:20px;height:20px"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+          </div>
         </div>
-        <div class="sp-tg-bubble">Server online. Tokyo, 203.0.113.24.<div class="sp-bubble-time">03:12</div></div>
-        <div class="sp-tg-bubble">Opened MEW-USDT. Long Binance 0.0005065, short Bybit 0.0005141. Spread 1.50%.<div class="sp-bubble-time">05:00</div></div>
-        <div class="sp-tg-bubble">Closed MEW-USDT at 0.84%. <span class="sp-bubble-profit">+$3.26</span> before fees, held 42 min.<div class="sp-bubble-time">05:42</div></div>
       </div>
 
       <div class="sp-server-card" aria-hidden="true">
@@ -437,7 +495,8 @@
       </div>
     </div>
   </section>
-</div>`;
+
+  <!-- ════════ JAVASCRIPT — LIVE DATA ════════ -->`;
 
   var styles = `#sp-arb-suite {
       --sp-ground: #020605;
@@ -609,7 +668,7 @@
     .sp-dash-cards { display: flex; gap: 1rem; margin-top: 1rem; flex: 1; overflow: hidden; }
     .sp-dash-card {
       flex: 1; min-width: 0; border: 1px solid var(--sp-line-strong); border-radius: 12px;
-      padding: 1rem; font-size: 12px;
+      padding: 1rem; font-size: 12px; background: rgba(19,19,21,0.6);
     }
     .sp-dash-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; }
     .sp-dash-card-header .sp-pair-name { display: flex; align-items: center; gap: 0.5rem; }
@@ -630,19 +689,7 @@
     .sp-dash-spread-item .sp-spread-val { font-family: var(--sp-mono); font-size: 16px; font-weight: 700; }
     .sp-dash-spread-item .sp-spread-sub { font-size: 9px; color: var(--sp-text-muted); font-family: var(--sp-mono); }
 
-    /* Telegram overlay */
-    .sp-tg-overlay {
-      position: absolute; bottom: 1.5rem; right: 2rem; z-index: 10;
-      background: var(--sp-surface-800); border: 1px solid var(--sp-line-strong);
-      border-radius: 12px; padding: 0.75rem 1rem; min-width: 280px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    }
-    .sp-tg-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-    .sp-tg-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #10cf90, #00e5cc); display: grid; place-items: center; font-size: 12px; font-weight: 700; color: #001e17; }
-    .sp-tg-name { font-size: 13px; font-weight: 600; }
-    .sp-tg-sub { font-size: 11px; color: var(--sp-text-muted); }
-    .sp-tg-msg { font-size: 11px; color: var(--sp-text-secondary); line-height: 1.5; margin-top: 0.25rem; }
-    .sp-tg-time { font-size: 9px; color: var(--sp-text-muted); text-align: right; margin-top: 4px; }
+    .sp-tg-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #10cf90, #00e5cc); display: grid; place-items: center; font-size: 12px; font-weight: 700; color: #001e17; flex-shrink: 0; }
 
     /* ── BENEFIT SECTIONS ── */
     .sp-benefit-section { max-width: 72rem; margin: 0 auto; padding: 6rem 1rem 0; }
@@ -822,14 +869,19 @@
 
     .sp-watch-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
 
-    .sp-tg-phone {
-      border-radius: 12px; background: var(--sp-win); border: 1px solid var(--sp-line-strong);
-      padding: 1.25rem; font-size: 12px;
+    .sp-phone-frame {
+      border-radius: 2.75rem; background: var(--sp-surface-800); border: 1px solid var(--sp-line-strong);
+      padding: 10px; max-width: 320px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
     }
-    .sp-tg-phone-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--sp-line); }
+    .sp-phone-inner {
+      border-radius: 2.1rem; background: var(--sp-win); border: 1px solid var(--sp-line);
+      overflow: hidden; display: flex; flex-direction: column; min-height: 480px;
+    }
+    .sp-tg-phone-header { display: flex; align-items: center; gap: 0.5rem; padding: 12px 14px; border-bottom: 1px solid var(--sp-line); }
     .sp-tg-phone-name { font-weight: 600; font-size: 14px; }
     .sp-tg-phone-sub { font-size: 11px; color: var(--sp-text-muted); }
-    .sp-tg-bubble { background: var(--sp-surface-700); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; font-size: 12px; line-height: 1.55; color: var(--sp-text-secondary); }
+    .sp-tg-bubble { background: var(--sp-surface-700); border-radius: 10px 10px 10px 2px; padding: 10px 12px; font-size: 12px; line-height: 1.55; color: var(--sp-text-secondary); }
     .sp-tg-bubble .sp-bubble-time { font-size: 9px; color: var(--sp-text-muted); text-align: right; margin-top: 4px; }
     .sp-tg-bubble .sp-bubble-profit { color: var(--sp-profit); font-weight: 600; }
 
@@ -971,44 +1023,31 @@
 
   function ensureStyles() {
     if (document.getElementById(STYLE_ID)) return;
-
-    var fontLink = document.createElement("link");
-    fontLink.rel = "stylesheet";
-    fontLink.href = "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap";
-    document.head.appendChild(fontLink);
-
-    var style = document.createElement("style");
-    style.id = STYLE_ID;
-    style.setAttribute("data-sp-arb-suite-style", "");
-    style.textContent = styles;
-    document.head.appendChild(style);
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap";
+    document.head.appendChild(link);
+    var s = document.createElement("style");
+    s.id = STYLE_ID;
+    s.textContent = styles;
+    document.head.appendChild(s);
   }
 
   function ensureMarkup() {
-    var existingRoot = document.querySelector(ROOT_SELECTOR);
-    if (existingRoot) return existingRoot;
-
-    var mount = document.createElement("div");
-    mount.setAttribute("data-sp-arb-suite-mount", "");
-    mount.innerHTML = markup;
-
-    var canInsertBeforeScript =
-      loaderScript &&
-      loaderScript.parentNode &&
-      loaderScript.parentNode.nodeType === 1 &&
-      loaderScript.parentNode.tagName !== "HEAD";
-
-    if (canInsertBeforeScript) {
-      loaderScript.parentNode.insertBefore(mount, loaderScript);
+    if (document.getElementById(ROOT_ID)) return;
+    var wrapper = document.createElement("div");
+    wrapper.id = ROOT_ID;
+    wrapper.setAttribute("aria-label", "SettlePal Arbitrage Suite — Coming Soon");
+    wrapper.innerHTML = markup;
+    if (loaderScript && loaderScript.parentNode) {
+      loaderScript.parentNode.insertBefore(wrapper, loaderScript);
     } else {
-      document.body.appendChild(mount);
+      document.body.appendChild(wrapper);
     }
-
-    return mount.querySelector(ROOT_SELECTOR);
   }
 
   function initLiveData() {
-(function () {
+    (function () {
       'use strict';
 
       var root = document.getElementById('sp-arb-suite');
@@ -1219,8 +1258,7 @@
 
   function initialize() {
     ensureStyles();
-    var root = ensureMarkup();
-    if (!root || root.getAttribute("data-sp-ready") === "true") return;
+    ensureMarkup();
     initLiveData();
   }
 
