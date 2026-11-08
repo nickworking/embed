@@ -8,6 +8,10 @@
 (function () {
   "use strict";
 
+  var loaderScript = document.currentScript;
+  var STYLE_ID = "sp-arb-suite-styles";
+  var ROOT_SELECTOR = "#sp-arb-suite";
+
   var markup = `<section id="home-hero" class="relative pt-24 sm:pt-28"><div class="max-w-6xl mx-auto px-4 sm:px-6"><div class="sp-coming-soon"><span></span>Coming Soon <i>·</i> Exclusively for Platinum Members <i>·</i> 2027</div><h1 class="max-w-4xl text-[2.6rem] sm:text-6xl lg:text-[4.5rem] font-medium tracking-[-0.045em] leading-[1.02] text-text-primary"><span class="block sp-title-accent">Earn the spread,</span><span class="block">not the direction</span></h1>
 
         <div class="mt-7 flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between"><p class="max-w-xl text-[17px] leading-relaxed text-text-secondary text-pretty">The complete market-neutral crypto arbitrage suite.</p>
@@ -1047,24 +1051,46 @@
 }`;
 
   function ensureStyles() {
-    if (document.getElementById("sp-arb-suite-styles")) return;
+    if (document.getElementById(STYLE_ID)) return;
     var link = document.createElement("link");
     link.rel = "stylesheet";
     link.href = "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Onest:wght@400..700&display=swap";
     document.head.appendChild(link);
     var s = document.createElement("style");
-    s.id = "sp-arb-suite-styles";
+    s.id = STYLE_ID;
     s.textContent = styles;
     document.head.appendChild(s);
   }
 
   function ensureMarkup() {
-    var root = document.getElementById("sp-arb-suite");
-    if (!root) return;
-    if (root.getAttribute("data-sp-ready") === "true") return;
-    root.setAttribute("data-sp-ready", "true");
-    root.classList.add("settlepal-source", "dark");
-    root.innerHTML = markup;
+    var existingRoot = document.querySelector(ROOT_SELECTOR);
+    if (existingRoot) {
+      if (existingRoot.getAttribute("data-sp-ready") === "true") return existingRoot;
+      existingRoot.setAttribute("data-sp-ready", "true");
+      existingRoot.classList.add("settlepal-source", "dark");
+      existingRoot.innerHTML = markup;
+      return existingRoot;
+    }
+
+    var mount = document.createElement("div");
+    mount.id = "sp-arb-suite";
+    mount.setAttribute("data-sp-ready", "true");
+    mount.classList.add("settlepal-source", "dark");
+    mount.innerHTML = markup;
+
+    var canInsertBeforeScript =
+      loaderScript &&
+      loaderScript.parentNode &&
+      loaderScript.parentNode.nodeType === 1 &&
+      loaderScript.parentNode.tagName !== "HEAD";
+
+    if (canInsertBeforeScript) {
+      loaderScript.parentNode.insertBefore(mount, loaderScript);
+    } else {
+      document.body.appendChild(mount);
+    }
+
+    return mount;
   }
 
   function initLiveData() {
@@ -1085,6 +1111,6 @@
   }
 
   ensureStyles();
-  ensureMarkup();
-  initLiveData();
+  var root = ensureMarkup();
+  if (root) initLiveData();
 })();
