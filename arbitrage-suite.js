@@ -48,6 +48,7 @@
     <!-- ════════ DASHBOARD PREVIEW ════════ -->
     <div class="sp-stage-wrap">
       <div class="sp-stage">
+        <svg class="sp-stage-glow" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true"><polygon points="0,124 50,129 101,229 151,207 202,252 252,280 303,257 353,237 403,216 454,139 504,105 555,98 605,92 656,102 706,115 756,115 807,190 857,193 908,207 958,198 1008,247 1059,224 1109,194 1160,175 1200,123 1200,177 1160,222 1109,242 1059,279 1008,308 958,261 908,259 857,241 807,227 756,164 706,154 656,149 605,149 555,156 504,174 454,199 403,269 353,291 303,310 252,330 202,297 151,256 101,282 50,187 0,177" fill="#10cf90"/></svg>
         <div class="sp-dash-window" aria-hidden="true">
           <div class="sp-dash-sidebar">
             <svg class="sp-dash-logo" viewBox="0 0 280 50" fill="none"><text x="0" y="36" font-family="Space Grotesk, sans-serif" font-size="32" font-weight="600" fill="#ededef">SettlePal</text></svg>
@@ -120,7 +121,7 @@
 
   <!-- ════════ BENEFITS: ADVANCED TRADING ════════ -->
   <section class="sp-benefit-section">
-    <span class="sp-section-kicker">Built for traders who want more from their exchange accounts</span>
+    <span class="sp-section-kicker">Built for traders who want more from their exchange accounts.</span>
     <div class="sp-section-heading-grid">
       <h2>Advanced Trading.<br>Made Accessible.</h2>
       <p>For traders who want smarter ways to trade across multiple cryptocurrency exchanges.</p>
@@ -149,7 +150,7 @@
 
   <!-- ════════ BENEFITS: OPPORTUNITIES ════════ -->
   <section class="sp-benefit-section">
-    <span class="sp-section-kicker">Markets move around the clock</span>
+    <span class="sp-section-kicker">Markets move around the clock.</span>
     <div class="sp-section-heading-grid">
       <h2>Opportunities Don't Wait.<br>Neither Should You.</h2>
       <p>Crypto markets move 24/7. Price differences and funding rates create opportunities across exchanges every day.</p>
@@ -485,6 +486,7 @@
 
     /* ── HERO ── */
     .sp-hero { position: relative; padding: 6rem 1rem 0; }
+    @media (min-width: 640px) { .sp-hero { padding-top: 7rem; } }
     .sp-hero-inner { max-width: 72rem; margin: 0 auto; padding: 0 0.5rem; }
 
     .sp-coming-soon {
@@ -500,10 +502,12 @@
     @keyframes spPulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
     .sp-hero h1 {
-      max-width: 54rem; font-size: clamp(2.2rem, 6vw, 4.5rem);
-      font-weight: 500; tracking: -0.045em; line-height: 1.02;
+      max-width: 64rem; font-size: 2.6rem;
+      font-weight: 500; line-height: 1.02;
       letter-spacing: -0.045em;
     }
+    @media (min-width: 640px) { .sp-hero h1 { font-size: 3.75rem; } }
+    @media (min-width: 1024px) { .sp-hero h1 { font-size: 4.5rem; } }
     .sp-title-accent {
       color: #10cf90; -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 24px #10cf9021);
@@ -513,7 +517,10 @@
     }
 
     .sp-hero-sub { margin-top: 1.75rem; display: flex; flex-direction: column; gap: 1.75rem; }
-    .sp-hero-sub p { max-width: 36rem; font-size: 17px; line-height: 1.6; color: var(--sp-text-secondary); }
+    .sp-hero-sub p { max-width: 36rem; font-size: 17px; line-height: 1.6; color: var(--sp-text-secondary); text-wrap: pretty; }
+    @media (min-width: 1024px) {
+      .sp-hero-sub { flex-direction: row; align-items: end; justify-content: space-between; }
+    }
     .sp-exclusive-highlight {
       color: #baf7e3; background: #10cf9017; border: 1px solid #10cf904d;
       border-radius: 999px; display: inline-flex; align-items: center; gap: 8px;
@@ -522,7 +529,8 @@
     }
     .sp-exclusive-highlight i { width: 5px; height: 5px; border-radius: 50%; background: #10cf90; display: inline-block; }
 
-    .sp-trust-strip { margin-top: 2.75rem; display: grid; gap: 1.5rem; grid-template-columns: repeat(3, 1fr); }
+    .sp-trust-strip { margin-top: 2.75rem; display: grid; gap: 1.5rem; }
+    @media (min-width: 640px) { .sp-trust-strip { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
     .sp-trust-item { display: flex; gap: 0.875rem; }
     .sp-trust-icon { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--sp-surface-700); display: grid; place-items: center; color: var(--sp-text-primary); }
     .sp-trust-icon svg { width: 17px; height: 17px; }
@@ -545,16 +553,22 @@
     .sp-cta-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
 
     /* ── DASHBOARD PREVIEW ── */
-    .sp-stage-wrap { margin: 2.5rem auto 0; max-width: 85rem; padding: 0 0.5rem; }
+    .sp-stage-wrap { margin: 2.5rem auto 0; max-width: 85rem; padding: 0 0.75rem; }
+    @media (min-width: 640px) { .sp-stage-wrap { margin-top: 3rem; } }
     .sp-stage {
       position: relative; overflow: hidden; border-radius: 4px;
-      padding: 2.5rem 1.5rem 10rem;
-      background: radial-gradient(ellipse at 50% 100%, #10cf9008 0%, transparent 70%);
+      padding: 2.5rem 0.5rem 3.5rem;
+    }
+    @media (min-width: 640px) { .sp-stage { padding: 3.5rem 1.5rem 6rem; } }
+    @media (min-width: 1024px) { .sp-stage { padding: 3.5rem 1.5rem 10rem; } }
+    .sp-stage-glow {
+      pointer-events: none; position: absolute; bottom: -12%; left: -8%;
+      width: 116%; height: 78%; opacity: 0.15; filter: blur(44px);
     }
     .sp-dash-window {
-      border-radius: 12px; background: var(--sp-win); border: 1px solid var(--sp-line-strong);
+      position: relative; border-radius: 12px; background: var(--sp-win); border: 1px solid var(--sp-line-strong);
       box-shadow: 0 25px 80px rgba(0,0,0,0.5); overflow: hidden; display: flex;
-      max-width: 70rem; margin: 0 auto; text-align: left; min-height: 480px;
+      max-width: 70rem; margin: 0 auto; text-align: left;
     }
 
     /* Sidebar */
@@ -631,11 +645,12 @@
     .sp-tg-time { font-size: 9px; color: var(--sp-text-muted); text-align: right; margin-top: 4px; }
 
     /* ── BENEFIT SECTIONS ── */
-    .sp-benefit-section { max-width: 72rem; margin: 0 auto; padding: 6rem 1.5rem 0; }
+    .sp-benefit-section { max-width: 72rem; margin: 0 auto; padding: 6rem 1rem 0; }
+    @media (min-width: 640px) { .sp-benefit-section { padding: 7rem 1.5rem 0; } }
     .sp-section-kicker { color: #10cf90; letter-spacing: 0.14em; text-transform: uppercase; font-size: 10px; font-weight: 600; }
     .sp-section-heading-grid { display: grid; grid-template-columns: 1fr 0.72fr; align-items: end; gap: 72px; margin-top: 12px; }
-    .sp-section-heading-grid h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
-    .sp-section-heading-grid p, .sp-section-intro { font-size: 15px; line-height: 1.7; color: var(--sp-text-secondary); }
+    .sp-section-heading-grid h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance; }
+    .sp-section-heading-grid p, .sp-section-intro { font-size: 17px; line-height: 1.7; color: var(--sp-text-secondary); text-wrap: pretty; }
 
     .sp-pictogram-grid {
       border-top: 1px solid var(--sp-line); border-bottom: 1px solid var(--sp-line);
@@ -648,34 +663,37 @@
       transition: background-color 0.2s;
     }
     .sp-pictogram-card:first-child { border-left: none; }
-    .sp-pictogram-card:hover { background: linear-gradient(145deg, #10cf900d, transparent 58%); }
+    .sp-pictogram-card:last-child { border-right: 1px solid var(--sp-line); }
+    .sp-pictogram-card:hover { background-color: #10cf9006; border-color: #10cf9040; }
     .sp-card-number { color: var(--sp-text-muted); font-family: var(--sp-mono); font-size: 10px; position: absolute; top: 28px; right: 25px; }
     .sp-pictogram {
       color: #10cf90; background: #10cf9013; border: 1px solid #10cf9033;
       border-radius: 10px; display: grid; place-items: center; width: 48px; height: 48px;
       box-shadow: inset 0 1px rgba(255,255,255,0.035);
     }
-    .sp-pictogram svg { width: 22px; height: 22px; }
-    .sp-pictogram-card h3 { font-size: 16px; font-weight: 600; margin-top: 20px; }
-    .sp-pictogram-card p { font-size: 14px; line-height: 1.6; color: var(--sp-text-secondary); margin-top: 6px; }
+    .sp-pictogram svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+    .sp-pictogram-card h3 { font-size: 19px; font-weight: 500; margin: 44px 0 10px; letter-spacing: -0.02em; }
+    .sp-pictogram-card p { max-width: 285px; font-size: 13px; line-height: 1.7; color: var(--sp-text-secondary); }
 
     /* ── SELLING STRIP ── */
     .sp-selling-strip {
       background: linear-gradient(90deg, #10cf901c, #00e5cc0b);
       border: 1px solid #10cf904d; border-radius: 12px;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
       margin-top: 16px; padding: 8px;
-      box-shadow: inset 0 1px rgba(255,255,255,0.04), 0 18px 45px rgba(0,0,0,0.18);
+      box-shadow: inset 0 1px rgba(255,255,255,0.043), 0 18px 45px rgba(0,0,0,0.18);
     }
-    .sp-strip-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; }
+    .sp-strip-item { display: flex; align-items: center; gap: 15px; min-height: 88px; padding: 16px 19px; border-right: 1px solid #10cf9029; }
+    .sp-strip-item:last-child { border-right: none; }
     .sp-strip-icon {
       color: #baf7e3; background: #031913b8; border: 1px solid #10cf9047;
       border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
       width: 42px; height: 42px;
     }
-    .sp-strip-icon svg { width: 18px; height: 18px; }
-    .sp-strip-text strong { display: block; font-size: 14px; font-weight: 600; color: var(--sp-text-primary); }
-    .sp-strip-text span { font-size: 12px; color: var(--sp-text-secondary); }
+    .sp-strip-icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+    .sp-strip-text { display: flex; flex-direction: column; gap: 5px; }
+    .sp-strip-text strong { display: block; font-size: 13px; font-weight: 600; color: #e6f3ef; }
+    .sp-strip-text span { font-size: 11px; line-height: 1.45; color: #91a39e; }
 
     /* ── STATS ── */
     .sp-stats {
@@ -700,8 +718,8 @@
 
     /* ── SCANNER SECTION ── */
     .sp-scanner-section { max-width: 72rem; margin: 0 auto; padding: 5rem 1.5rem 0; }
-    .sp-scanner-section h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
-    .sp-scanner-section > p { font-size: 15px; line-height: 1.7; color: var(--sp-text-secondary); margin-top: 12px; max-width: 42rem; }
+    .sp-scanner-section h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance; }
+    .sp-scanner-section > p { font-size: 17px; line-height: 1.6; color: var(--sp-text-secondary); margin-top: 12px; max-width: 42rem; text-wrap: pretty; }
 
     .sp-scanner-window {
       margin-top: 2rem; border-radius: 12px; background: var(--sp-win);
@@ -756,7 +774,7 @@
 
     /* ── TWO-LEG SECTION ── */
     .sp-twoleg-section { max-width: 72rem; margin: 0 auto; padding: 5rem 1.5rem 0; }
-    .sp-twoleg-section h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
+    .sp-twoleg-section h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance; }
     .sp-twoleg-section > p { font-size: 15px; line-height: 1.7; color: var(--sp-text-secondary); margin-top: 12px; max-width: 42rem; }
 
     .sp-twoleg-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
@@ -799,7 +817,7 @@
 
     /* ── TELEGRAM / SERVER SECTION ── */
     .sp-watch-section { max-width: 72rem; margin: 0 auto; padding: 5rem 1.5rem 0; }
-    .sp-watch-section h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
+    .sp-watch-section h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance; }
     .sp-watch-section > p { font-size: 15px; line-height: 1.7; color: var(--sp-text-secondary); margin-top: 12px; max-width: 42rem; }
 
     .sp-watch-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
@@ -836,15 +854,15 @@
 
     /* ── DATA / FUNDING SECTION ── */
     .sp-data-section { max-width: 72rem; margin: 0 auto; padding: 5rem 1.5rem 0; }
-    .sp-data-section h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
+    .sp-data-section h2 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance; }
 
-    .sp-data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .sp-data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.875rem; margin-top: 3.5rem; }
     .sp-data-card {
-      border-radius: 12px; background: var(--sp-win); border: 1px solid var(--sp-line-strong);
-      padding: 1.25rem; font-size: 12px;
+      border-radius: 12px; background: rgba(19,19,21,0.6); border: 1px solid var(--sp-line);
+      padding: 1.25rem 1.5rem; font-size: 12px; display: flex; flex-direction: column; gap: 1rem;
     }
     .sp-data-card.full { grid-column: 1 / -1; }
-    .sp-data-card .sp-data-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--sp-accent); font-weight: 600; }
+    .sp-data-card .sp-data-label { font-family: var(--sp-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--sp-text-muted); font-weight: 400; }
     .sp-data-card h3 { font-size: 16px; font-weight: 600; margin-top: 6px; }
     .sp-data-card .sp-data-desc { font-size: 12px; color: var(--sp-text-muted); margin-top: 4px; line-height: 1.5; }
 
@@ -879,7 +897,7 @@
     }
     .sp-final-inner { text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 70rem; margin: 0 auto; position: relative; }
     .sp-final-inner .sp-section-kicker { margin-bottom: 0; }
-    .sp-final-inner h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; margin-top: 12px; }
+    .sp-final-inner h2 { font-size: clamp(2.75rem, 6vw, 4.75rem); font-weight: 500; line-height: 1; letter-spacing: -0.055em; margin-top: 18px; text-wrap: balance; }
     .sp-final-lead { color: #dbe6e3; margin: 18px 0 0; font-size: 18px; line-height: 1.6; }
     .sp-final-copy { max-width: 650px; color: var(--sp-text-secondary); margin: 12px auto 0; font-size: 14px; line-height: 1.75; }
     .sp-final-release { color: #a7b7b2; max-width: 620px; margin: 18px auto 0; font-size: 13px; font-weight: 500; }
