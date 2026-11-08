@@ -26,8 +26,7 @@
                     <span class="flex flex-col gap-0.5 pt-px"><span class="text-[15px] font-medium text-text-primary">No fee in a losing week</span>
                         <span class="text-sm leading-relaxed text-text-secondary text-pretty">Designed exclusively for Platinum members and above.</span></span></li></ul></div>
 
-    <div class="sp-dashboard-cta-wrap"><a class="sp-dashboard-cta" href="https://settlepal.com/get-started">Start Today <svg viewbox="0 0 20 20" aria-hidden="true"><path d="M3 10h14M12.5 5.5 17 10l-4.5 4.5"></path></svg></a></div><div class="mx-auto mt-10 max-w-[85rem] px-2 sm:mt-12 sm:px-3"><div class="site-stage relative overflow-hidden rounded-[4px] px-2 pb-14 pt-10 sm:px-6 sm:pb-24 sm:pt-14 lg:pb-40"><svg viewbox="0 0 1200 400" preserveaspectratio="none" aria-hidden="true" class="pointer-events-none absolute -bottom-[12%] -left-[8%] h-[78%] w-[116%] opacity-15 blur-[44px]"><polygon points="0.0,123.7 50.4,129.1 100.8,229.2 151.3,206.6 201.7,251.7 252.1,279.7 302.5,257.2 352.9,237.3 403.4,215.7 453.8,139.0 504.2,104.7 554.6,97.5 605.0,92.1 655.5,102.0 705.9,114.6 756.3,114.6 806.7,189.5 857.1,193.1 907.6,206.6 958.0,197.6 1008.4,247.2 1058.8,223.8 1109.2,194.0 1159.7,175.1 1200.0,122.8 1200.0,176.9 1159.7,222.0 1109.2,241.8 1058.8,278.8 1008.4,307.7 958.0,260.8 907.6,259.0 857.1,240.9 806.7,226.5 756.3,164.3 705.9,154.3 655.5,148.9 605.0,148.9 554.6,156.1 504.2,174.2 453.8,199.4 403.4,268.9 352.9,291.4 302.5,310.4 252.1,330.2 201.7,296.9 151.3,256.3 100.8,281.5 50.4,186.8 0.0,176.9" class="fill-site-acc"></polygon></svg>
-
+    <div class="sp-dashboard-cta-wrap"><a class="sp-dashboard-cta" href="https://settlepal.com/get-started">Start Today <svg viewbox="0 0 20 20" aria-hidden="true"><path d="M3 10h14M12.5 5.5 17 10l-4.5 4.5"></path></svg></a></div><div class="mx-auto mt-10 max-w-[85rem] px-2 sm:mt-12 sm:px-3"><div class="site-stage relative overflow-hidden rounded-[4px] px-2 pb-14 pt-10 sm:px-6 sm:pb-24 sm:pt-14 lg:pb-40">
             <div class="relative mx-auto max-w-[70rem]"><div class="rounded-xl bg-site-win border border-site-line-strong shadow-window overflow-hidden flex text-left" aria-hidden="true" data-tape-root><div class="hidden w-52 shrink-0 flex-col gap-0.5 border-r border-site-line bg-surface-900 px-2.5 py-3.5 text-[13px] text-text-secondary lg:flex"><span class="flex items-center px-2 pb-3.5 text-text-primary"><img src="https://found-oak-10658508.figma.site/settlepal-logo.png" alt="SettlePal" class="sp-dashboard-logo"></span>
         <span class="flex items-center justify-between px-2 pb-1.5 text-[11px] text-text-muted">Overview
             <span class="flex gap-px rounded-md border border-site-line p-px text-[10px]"><span class="rounded bg-surface-700 px-1.5 py-px text-text-primary">Session</span>
@@ -954,7 +953,7 @@
 .sp-exclusive-highlight{width:fit-content;min-height:30px;padding:0 11px;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(16,207,144,.3);border-radius:999px;background:rgba(16,207,144,.09);color:#baf7e3;box-shadow:inset 0 1px rgba(255,255,255,.035);font-size:10px;font-weight:500;line-height:1.35}
 .sp-exclusive-highlight>i{width:5px;height:5px;flex:none;border-radius:50%;background:#10cf90;box-shadow:0 0 9px #10cf90}
 .sp-dashboard-cta-wrap{margin-top:24px;display:flex;justify-content:center}
-.sp-dashboard-cta{min-height:46px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:#10cf90;color:#001e17;box-shadow:0 14px 34px rgba(16,207,144,.2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;transition:transform .2s,background-color .2s,box-shadow .2s}
+.sp-dashboard-cta{min-height:46px;padding:0 20px;display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;background:#10cf90;color:#001e17;box-shadow:0 14px 34px rgba(16,207,144,.2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;transition:transform .2s,background-color .2s,box-shadow .2s}
 .sp-dashboard-cta:hover{transform:translateY(-2px);background:#2add9f;box-shadow:0 18px 42px rgba(16,207,144,.3)}
 .sp-dashboard-cta svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
 .sp-dashboard-cta:hover svg{transform:translateX(3px)}
@@ -981,6 +980,7 @@
 .sp-selling-strip b{color:#e6f3ef;font-size:13px;font-weight:600}
 .sp-selling-strip small{color:#91a39e;font-size:11px;line-height:1.45}
 .sp-section-intro{max-width:640px;margin:18px 0 0;color:var(--color-text-secondary);font-size:17px;line-height:1.7}
+#sp-arb-suite a{text-decoration:none;color:inherit}
 .settlepal-source #home-hero .mt-7{margin-top:1.25rem}
 .settlepal-source #home-hero .mt-11{margin-top:2rem}
 .settlepal-source #home-hero .mt-16,.settlepal-source section>.site-stage,.settlepal-source section>.mt-14{margin-top:2.5rem}
