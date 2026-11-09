@@ -979,7 +979,11 @@
 .sp-selling-strip>div>span:last-child{display:flex;flex-direction:column;gap:5px}
 .sp-selling-strip b{color:#e6f3ef;font-size:13px;font-weight:600}
 .sp-selling-strip small{color:#91a39e;font-size:11px;line-height:1.45}
-.sp-section-intro{max-width:640px;margin:18px 0 0;color:var(--color-text-secondary);font-size:17px;line-height:1.7}
+.sp-section-intro{margin:18px 0 0;color:var(--color-text-secondary);font-size:17px;line-height:1.7}
+#sp-arb-suite,#sp-arb-suite *,#sp-arb-suite ::before,#sp-arb-suite ::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:currentColor;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scroll-snap-strictness:proximity;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:currentcolor;--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-inset-shadow:0 0 #0000;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-offset-shadow:0 0 #0000}
+#sp-arb-suite{font-family:"Onest",ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+#sp-arb-suite img,#sp-arb-suite svg,#sp-arb-suite video,#sp-arb-suite canvas{display:block;max-width:100%;vertical-align:middle}
+#sp-arb-suite h1,#sp-arb-suite h2,#sp-arb-suite h3,#sp-arb-suite h4,#sp-arb-suite h5,#sp-arb-suite h6,#sp-arb-suite p{margin:0}
 #sp-arb-suite a{text-decoration:none;color:inherit}
 .settlepal-source #home-hero .mt-7{margin-top:1.25rem}
 .settlepal-source #home-hero .mt-11{margin-top:2rem}
